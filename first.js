@@ -29,6 +29,11 @@
 // div.append(h2);
 
 const element = React.createElement("h1",{},"hello");
+const element2 = React.createElement("h2",{},"how are you");
 // ReactDOM.rendor(element,document.getElementById('root'));
- const root = ReactDOM.createRoot(document.getElementById('root'));
- root.render(element);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+root.render(element2);   // when you do this react will replace the previous render with this one
+// to render multiple elements we have to wrap them in a single element like div or fragment
+const wrapper = React.createElement("div",{},[element,element2]);
+root.render(wrapper);
